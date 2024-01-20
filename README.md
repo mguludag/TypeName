@@ -2,7 +2,7 @@
 A small C++17 utility for get type names constexpr from compiler
 
 
-## Usage
+## [Usage](https://godbolt.org/z/GYa4Ys3jh)
 ```C++
 #include "TypeName.hpp"
 #include <optional>
