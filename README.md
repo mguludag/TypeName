@@ -29,7 +29,7 @@ auto constexpr TypeUtils::Type::name<std::string_view>() noexcept
 
 auto main() -> int
 {
-  TypeUtils::printTypes(5, 5.5, "aaa", 'a', TypeUtils::Type{}, name, std::nullopt);
+  printTypes(5, 5.5, "aaa", 'a', TypeUtils::Type{}, name, std::nullopt);
   // prints: "types are: int, double, const char*, char, TypeUtils::Type, std::string_view, std::nullopt_t"
 }
 ````
