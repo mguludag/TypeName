@@ -67,7 +67,7 @@ struct Type {
 
    private:
     static constexpr std::array<unsigned, 3> typeNameIndexes
-#if defined(__clang__) && !defined(__GNUC__)
+#if defined(__clang__)
         {1U, '=', 1U};
 #elif defined(__GNUC__)
         {50U, '=', 1U};
