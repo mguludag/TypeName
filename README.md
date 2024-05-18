@@ -15,7 +15,7 @@ auto printTypes(Args&&... args) -> void {
     auto c = 0U;
     std::print("types are: "),
         // NOLINTNEXTLINE [cppcoreguidelines-pro-bounds-array-to-pointer-decay]
-        (std::print("{}{}", Type::name(std::forward<Args>(args)),
+        (std::print("{}{}", TypeUtils::Type::name(std::forward<Args>(args)),
                     (++c == sizeof...(args) ? "\n" : ", ")),
          ...);  // NOLINT
 }
@@ -29,6 +29,7 @@ auto constexpr TypeUtils::Type::name<std::string_view>() noexcept
 
 auto main() -> int
 {
+  auto constexpr name = TypeUtils::Type::name(TypeUtils::Type{});
   printTypes(5, 5.5, "aaa", 'a', TypeUtils::Type{}, name, std::nullopt);
   // prints: "types are: int, double, const char*, char, TypeUtils::Type, std::string_view, std::nullopt_t"
 }
